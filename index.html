@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raíz Oriental · Números</title>
+<meta name="apple-mobile-web-app-title" content="Raíz Oriental">
+<meta name="theme-color" content="#2A4820">
+<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1F_qOThAJUlP0u_migMlvX68HCc7tMscq=w180">
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1F_qOThAJUlP0u_migMlvX68HCc7tMscq=w64">
+<style>
+  :root{color-scheme:light}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#F2F4EF;color:#18211C;text-align:center;padding:24px}
+  img{width:96px;height:96px}
+  a{display:inline-block;background:#245C45;color:#fff;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600}
+  p{margin:0;color:#5D6A61;font-size:14px}
+</style>
+</head>
+<body>
+<img src="https://lh3.googleusercontent.com/d/1F_qOThAJUlP0u_migMlvX68HCc7tMscq=w192" alt="Raíz Oriental">
+<p>Abriendo los números de Raíz Oriental…</p>
+<a id="go" href="https://script.google.com/macros/s/AKfycbyHMCCSDaZ9Dwl3qahwRGRHZepveZ8veTpCMhAvL-Lg5pNGLS_lGT1BL6PTtejNxheS/exec">Abrir la app</a>
+<p>Para el inicio del iPhone: Compartir → Agregar a inicio.</p>
+<script>
+  // Si se abrió desde el ícono del inicio, entra directo a la app.
+  var standalone = window.navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+  var desdeInicio = /[?&]inicio=1/.test(location.search);
+  if (!desdeInicio) history.replaceState(null, '', location.pathname + '?inicio=1');
+  if (standalone || desdeInicio) location.replace(document.getElementById('go').href);
+</script>
+</body>
+</html>
